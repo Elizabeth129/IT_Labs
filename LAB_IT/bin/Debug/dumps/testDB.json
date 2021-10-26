@@ -1,0 +1,28 @@
+{
+  "Name": "testDB",
+  "Tables": [
+    {
+      "Name": "table",
+      "ColumnDefinitions": [
+        {
+          "Name": "col1",
+          "Type": 4
+        },
+        {
+          "Name": "col2",
+          "Type": 0
+        }
+      ],
+      "Data": [
+        [
+          {},
+          12
+        ],
+        [
+          {},
+          11
+        ]
+      ]
+    }
+  ]
+}

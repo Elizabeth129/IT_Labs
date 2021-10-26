@@ -1,0 +1,23 @@
+services:
+  db:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Your_password123
+    image: mcr.microsoft.com/mssql/server
+  lab_it_api:
+    build:
+      context: D:\4ъєЁё1\IT\LAB_IT
+      dockerfile: LAB_IT_API/Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\╦╚╟└\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\╦╚╟└\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+    lab_it_api:
+        build:
+            context: .
+            dockerfile: LAB_IT_API/Dockerfile
+        depends_on:
+            - db
+        ports:
+            - "10000:80"
+    db:
+        image: "mcr.microsoft.com/mssql/server"
+        environment:
+            SA_PASSWORD: "Your_password123"
+            ACCEPT_EULA: "Y"

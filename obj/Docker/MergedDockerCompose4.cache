@@ -1,0 +1,86 @@
+services:
+  db:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Your_password123
+    image: mcr.microsoft.com/mssql/server
+    networks:
+      default: null
+  lab_it_api:
+    build:
+      context: .
+      dockerfile: LAB_IT_API/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: LAB_IT_API
+      target: base
+    container_name: LAB_IT_API
+    depends_on:
+      db:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: labitapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "bin/Debug/netcoreapp3.1/LAB_IT_API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 10000
+      protocol: tcp
+    tty: true
+    volumes:
+    - type: bind
+      source: D:\4РєСѓСЂСЃ1\IT\LAB_IT\LAB_IT_API
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: D:\4РєСѓСЂСЃ1\IT\LAB_IT
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Р›РР—Рђ\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Р›РР—Рђ\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Program Files\dotnet\sdk\NuGetFallbackFolder
+      target: /root/.nuget/fallbackpackages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Р›РР—Рђ\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Р›РР—Рђ\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+networks:
+  default:
+    name: dockercompose13568533458775686349_default

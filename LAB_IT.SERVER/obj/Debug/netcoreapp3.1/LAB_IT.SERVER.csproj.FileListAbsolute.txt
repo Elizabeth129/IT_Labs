@@ -1,0 +1,10 @@
+D:\4курс1\IT\LAB_IT\LAB_IT.SERVER\bin\Debug\netcoreapp3.1\LAB_IT.SERVER.exe
+D:\4курс1\IT\LAB_IT\LAB_IT.SERVER\bin\Debug\netcoreapp3.1\LAB_IT.SERVER.deps.json
+D:\4курс1\IT\LAB_IT\LAB_IT.SERVER\bin\Debug\netcoreapp3.1\LAB_IT.SERVER.runtimeconfig.json
+D:\4курс1\IT\LAB_IT\LAB_IT.SERVER\bin\Debug\netcoreapp3.1\LAB_IT.SERVER.runtimeconfig.dev.json
+D:\4курс1\IT\LAB_IT\LAB_IT.SERVER\bin\Debug\netcoreapp3.1\LAB_IT.SERVER.dll
+D:\4курс1\IT\LAB_IT\LAB_IT.SERVER\bin\Debug\netcoreapp3.1\LAB_IT.SERVER.pdb
+D:\4курс1\IT\LAB_IT\LAB_IT.SERVER\obj\Debug\netcoreapp3.1\LAB_IT.SERVER.AssemblyInfoInputs.cache
+D:\4курс1\IT\LAB_IT\LAB_IT.SERVER\obj\Debug\netcoreapp3.1\LAB_IT.SERVER.AssemblyInfo.cs
+D:\4курс1\IT\LAB_IT\LAB_IT.SERVER\obj\Debug\netcoreapp3.1\LAB_IT.SERVER.dll
+D:\4курс1\IT\LAB_IT\LAB_IT.SERVER\obj\Debug\netcoreapp3.1\LAB_IT.SERVER.pdb
